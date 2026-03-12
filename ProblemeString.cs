@@ -215,6 +215,55 @@ namespace initiere
             text = Console.ReadLine();
 
             string[] cuvinte = text.Split(' ');
+            int max = -1, maxLast = -1;
+            string best = null, bestLast = null;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (cuvinte[i].Length > max)
+                {
+                    maxLast = max;
+                    bestLast = best;
+                    max = cuvinte[i].Length;
+                    best = cuvinte[i];
+                }
+                else if (cuvinte[i].Length > maxLast)
+                {
+                    maxLast = cuvinte[i].Length;
+                    bestLast = cuvinte[i];
+                }
+            }
+
+            Console.WriteLine(best + bestLast);
+        }
+
+        public static void ex7()
+        {   //se consider un sir de n cuv. Sa se det. cuv. cel mai mic in ordine lexicografica obtinut prin concatenarea a doua dintre cuv. citite
+            string text;
+            int n = Int32.Parse(Console.ReadLine());
+            text = Console.ReadLine();
+
+            string[] cuvinte = text.Split(' ');
+            int max = int.MinValue, maxLast = int.MinValue;
+            string best = null, bestLast = null;
+
+            for (int i = 0; i < n; i++)
+            {
+                if (max < string.Compare(best,cuvinte[i]))
+                {
+                    maxLast = max;
+                    bestLast = best;
+                    max = string.Compare(best, cuvinte[i]);
+                    best = cuvinte[i];
+                }
+                else if (maxLast < string.Compare(bestLast, cuvinte[i]))
+                {
+                    maxLast = string.Compare(best, cuvinte[i]);
+                    bestLast = cuvinte[i];
+                }
+            }
+
+            Console.WriteLine(best + bestLast);
         }
     }
 }
