@@ -4,7 +4,7 @@ internal class Program
 { 
     private static void Main()
     {
-        ProblemeString.ex7();
+        ProblemeVectori.ex2();
     }
 
 
