@@ -4,6 +4,6 @@ internal class Program
 {
     private static void Main()
     {
-        Spanzuratoarea.joc();
+        Lotto.Joc();
     }
 }

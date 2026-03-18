@@ -39,7 +39,7 @@ namespace initiere
             
             return word[RandomNumberGenerator.GetInt32(word.Length)];
         }
-        public static void joc()
+        public static void Joc()
         {
             string sentence = wordGenerator();
             string letters = Char.ToString(sentence[0]);
